@@ -89,6 +89,7 @@ body {
 }
 
 .btn {
+  display: inline-block;
   padding: 1rem 2.5rem;
   background: linear-gradient(to right, #00ffe5, #02e2cf);
   color: #000;
@@ -102,6 +103,17 @@ body {
 .btn:hover {
   background: linear-gradient(to right, #02e2cf, #00ffe5);
   transform: translateY(-3px) scale(1.05);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #00ffe5;
+  border: 1px solid #00ffe5;
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 255, 229, 0.1);
 }
 
 /* -------------------- Section Layout -------------------- */
@@ -161,19 +173,43 @@ h2 {
 }
 
 .profile-info .btn {
-  display: inline-block;
   margin-top: 15px;
   padding: 10px 20px;
-  background: #0077ff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.3s;
 }
 
-.profile-info .btn:hover {
-  background: #005ec4;
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.info-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+.info-card h3 {
+  color: #00ffe5;
+  margin-bottom: 0.8rem;
+}
+
+.info-card ul {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.info-card li {
+  color: #e6e6e6;
 }
 
 /* -------------------- Projects -------------------- */
@@ -525,5 +561,9 @@ footer {
 
   .profile-info h2 {
     font-size: 1.5em;
+  }
+
+  .profile-actions {
+    justify-content: center;
   }
 }
